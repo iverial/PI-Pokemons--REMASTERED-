@@ -1,6 +1,6 @@
 import a from "./Paginado.module.css"
 
-const Paginado = () => {
+const Paginado = ({PokemonsPerPage, allPokemons, paginado}) => {
     const PageNumbers = []
     for (let i = 1; i <= Math.ceil(allPokemons/PokemonsPerPage); i++) {
         PageNumbers.push(i)
