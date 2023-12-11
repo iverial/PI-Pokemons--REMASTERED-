@@ -103,7 +103,6 @@ const Home = () => {
       useEffect(() => {
         dispatch(getAllPokemons());
         dispatch(getAllTipos())
-        console.log(allPokemons)
       }, [dispatch]);
 
 
@@ -227,17 +226,17 @@ const Home = () => {
         
           </div>
         
-                <div className={a.maincards}>
+                <section className={a.maincards}>
                 {currentPokemons?.map((p) => {
                  return (
-                    <div className={a.cardpokemons} key={p.ID}>
+                    <section className={a.cardpokemons} key={p.ID}>
                         <Link className={a.link} key={p.ID} to={"/pokemonsdetail/" + p.ID} style={{ textDecoration: "inherit" }}>
                           <Pokemon Imagen={p.Imagen} Nombre={p.Nombre} Tipos={p.Tipos} ID={p.ID}/>   
                         </Link>
-                    </div>            
+                    </section>            
                        );
                     })}
-              </div> 
+              </section> 
                </div>  
             ) 
           } else if(!allPokemons.length || !totalTypes.length){

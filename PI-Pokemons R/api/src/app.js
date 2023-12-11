@@ -22,6 +22,9 @@ server.use((req, res, next) => {
 });
 
 server.use('/', router);
+server.use((req, res)=>{
+  res.status(404).send({error: "La ruta a la que quieres acceder no existe"})
+})
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
