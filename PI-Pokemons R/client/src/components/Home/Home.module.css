@@ -17,20 +17,26 @@
   }
 
 .cardpokemons{
-  margin-top: 100px;
-  margin-bottom: 20px;
+  /* margin-top: 100px;
+  margin-bottom: 20px; */
+  min-height: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  max-width: 300px;
 
   }
 
 .maincards{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 60px;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 50px;
+    /* gap: 150px; */
+    max-width: 1300px;
+    margin: 0 auto; 
+    /* padding-left:  50px;
+    padding-right: 50px; */
+    gap: 20px;
+}
 
 .divPaginado{
   max-width: 400px;
@@ -39,19 +45,17 @@
 }
   
 .asidecontainer{
- padding-top: 90px;
- padding-left: 950px;
- flex-direction: row;
- align-items: space-between;
- gap: 10px;
-
- display: flex;
+ flex-direction: column;
+ justify-content: center;
+ display: flex; 
+   gap: 10px;
 }
 
 .select{
-  background-color: black;
-  color: white;
+  background-color: #fff;
+  color: black;
   font-size: medium;
+  border-radius: 7px;
 }
 
 .label{
@@ -60,10 +64,12 @@
 
 .tituloF{
   color: black;
+  gap: 10px;
 }
 
 .link{
   min-width: 100px;
+  background-color: #fff;
 }
 
 .btnpaginado{

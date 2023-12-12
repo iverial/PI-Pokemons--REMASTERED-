@@ -1,4 +1,4 @@
-.searchcontainer{
+/* .searchcontainer{
     padding-top: 20px;
     padding-left: 10px;
     
@@ -37,4 +37,52 @@
     
     .inputsearch::placeholder {
       color: white;
-    }
+    } */
+
+  header form{
+      display: flex;
+      align-items: center;
+  
+      gap: 15px;
+  }
+
+.formgroup{
+    display: flex;
+    align-items: center;
+   gap: 10px; 
+   border: 1px solid #555;
+    padding: 15px 20px;
+    border-radius: 25px;
+} 
+
+.formgroup input{
+    font-family: inherit;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+
+.iconsearch{
+    width: 20px;
+    height: 20px;
+    stroke: #555;
+}
+
+.btnsearch{
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-family: inherit;
+    padding: 15px 30px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btnsearch:hover{
+    background-color: var(--color-primary-hover);
+    color: #000;
+}

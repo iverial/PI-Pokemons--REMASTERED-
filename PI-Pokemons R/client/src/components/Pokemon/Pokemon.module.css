@@ -1,33 +1,55 @@
 .container {
-    background-color: #000000ab;;
-    height: 450px;
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    border: 10px solid black;
-
+    max-height: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    min-width: 300px;
 }
 
 .container:hover{
     transform: scale(1.1);
-    border: 10px solid green;
-    background-color: greenyellow;
+    /* border: 10px solid #f2f2f2;; */
+    /* background-color: #f2f2f2; */
 }
 
  .img {
-    max-width: 200px;
+    background-color: #f2f2f2;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    max-width: 300px;
     max-height: 200px;
-    min-width: 200px;
     min-height: 200px;
-    margin: auto;
-    padding-top: 5px;
-    display: block;
-    position: relative;
-    z-index: 10;
+    min-width: 300px;
+}
+
+.cardinfo{
+    /* padding: 15px; */
+    display: flex;
+    align-items: center;
+
+}
+
+.cardinfo h2 {
+   color: #333;
 }
 
 .Tipos{
-    color: white;
+    /* display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-content: center; */
+
+}
+
+.Nombre{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.Tipos span{
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 5px;
+
 }
