@@ -33,7 +33,6 @@ const AxiosPokemons = async (pokemonID, pokemonName) => {
         },
       },
     });
-    console.log(pokeDB.concat(array))
     return pokeDB.concat(array)
   }
 };
