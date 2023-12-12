@@ -1,4 +1,4 @@
-.allli{
+/* .allli{
     position: absolute;
     width: 60%;
     margin: auto;
@@ -28,4 +28,39 @@
   .linkroute:active {
     border-color: white;
     color: #000000;
-  }
+  } */
+
+.navcontainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 40px;
+}
+
+
+.searchcontainer{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.linkroute{
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  font-family: inherit;
+  padding: 15px 30px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.linkroute:hover{
+  background-color: var(--color-primary-hover);
+}

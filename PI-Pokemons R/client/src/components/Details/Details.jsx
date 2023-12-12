@@ -5,6 +5,7 @@ import { getPokemonId, resetDetail } from "../../redux/actions";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Loading from "../Loading/Loading";
 import a from "./Details.module.css"
+import { Link } from "react-router-dom";
 
 const Details = () => {
     const dispatch = useDispatch();
@@ -66,6 +67,10 @@ const Details = () => {
               </div>
             </div>
           </div>
+
+          <Link className={a.btncreate} to="/pokemons" style={{ textDecoration: "none" }}>
+            Volver a Home
+          </Link>
             </div>
         )
     } else if(!Pokemon.length){

@@ -1,8 +1,26 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Individual Project - Henry Pokemon By Ivan Caggiano
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img height="150" src="./pokemon.png" />
+
+#### Tecnologías Usadas en el proyecto:
+
+- [ ] React
+- [ ] Redux
+- [ ] Express
+- [ ] Sequelize - Postgres
+
+#### Diseñe y desarrolle una SPA de Pokemons que incluye:
+búsquedas, filtrados, ordenamientos y creación
+Desarrollar la SPA usando las siguientes tecnologías, Front-End:
+React, Redux, CSS puro. Back-End: Node.js con Express. Base de
+datos en PostgreSQL y Sequelize.
+
+## Objetivos del Proyecto
+
+- Construir una App utlizando React, Redux, Node y Sequelize.
+- Afirmar y conectar los conceptos aprendidos en la carrera.
+- Aprender mejores prácticas.
+- Aprender y practicar el workflow de GIT.
+- Usar y practicar testing.
