@@ -2,7 +2,7 @@
 
 # Individual Project - Henry Pokemon By Ivan Caggiano
 
-<img height="150" src="./pokemon.png" />
+<img height="150" src="./client/assest/ashe pokemon1.png" />
 
 #### Tecnologías Usadas en el proyecto:
 
