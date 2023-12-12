@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,16 +44,52 @@ const SearchBar = () => {
 
     return(
         <div className={a.searchcontainer}>
-        <input
+
+      <header className={a.container}>
+			<form>
+				<div className={a.formgroup}>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						strokeWidth="1.5"
+						stroke="currentColor"
+						className={a.iconsearch}
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+						/>
+					</svg>
+					<input
+			       // eslint-disable-next-line no-mixed-spaces-and-tabs
+			       value={Nombre}
+             className={a.inputsearch}
+             onChange={(e) => handleInputChange(e)}
+             type="text"
+             placeholder="Buscar Pokemon..."
+					/>
+				</div>
+
+				<button className={a.btnsearch} onClick={(e) => handleSubmit(e)} type="submit">Buscar</button>
+			</form>
+		</header>
+
+
+
+
+        {/* <button className={a.btnsearch} onClick={(e) => handleSubmit(e)} type="submit">
+         buscar
+        </button>    */}
+        {/* <input
           value={Nombre}
           className={a.inputsearch}
           onChange={(e) => handleInputChange(e)}
           type="text"
           placeholder="Buscar Pokemon..."
-        />
-        <button className={a.btnsearch} onClick={(e) => handleSubmit(e)} type="submit">
-          Buscar
-        </button>
+        /> */}
+       
       </div>
     );
 }

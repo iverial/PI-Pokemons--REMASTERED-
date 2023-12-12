@@ -1,28 +1,15 @@
-import a from "./Home.module.css"
-
-//HOOKS
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import a from './filter.module.css'
+import Paginado from "../Paginado/Paginado";
 
-//ACTIONS
 import {OrderByNombre, getAllPokemons, OrderByAtaque, filterByTipos, getAllTipos,filterByOrigin } from "../../redux/actions";
 
-//COMPONENTES 
-import Paginado from "../Paginado/Paginado";
-import Loading from "../Loading/Loading";
-import Nav from "../Nav/Nav";
-// import ErrorPage from "../ErrorPage/ErrorPage";
-// import Filters from "../Filters/Filters";
-import Pokemon from "../Pokemon/Pokemon"
 
+const Filters = () => {
 
-const Home = () => {
-
-    //!HOOKS
     const dispatch = useDispatch();
 
-    // seteo estados locales
     const [, setOrder] = useState('')
     const [, setTipos] = useState("allpokemon");
 
@@ -30,13 +17,12 @@ const Home = () => {
     const totalTypes = useSelector((state) => state.Tipos);
     const allPokemons = useSelector((state) => state.pokemons);
 
-    // logica del paginado..
     const [currentPage,setCurrentPage] = useState(1)
     const [PokemonsPerPage, ] = useState(12)
-    const IndexOfLastPokemon = currentPage * PokemonsPerPage // 12
+    const IndexOfLastPokemon = currentPage * PokemonsPerPage // 11
     const IndexOfFirtsPokemon = IndexOfLastPokemon - PokemonsPerPage // 0
-    const currentPokemons = allPokemons.slice(IndexOfFirtsPokemon, IndexOfLastPokemon) // 
-    const indexPages = Math.ceil(allPokemons.length / PokemonsPerPage) // 
+    const currentPokemons = allPokemons.slice(IndexOfFirtsPokemon, IndexOfLastPokemon)
+    const indexPages = Math.ceil(allPokemons.length / PokemonsPerPage)
     const back = () => {
       if (currentPage !== 1) {
         setCurrentPage(currentPage - 1);
@@ -60,7 +46,6 @@ const Home = () => {
       setCurrentPage(PageNumber)
     }
 
-    // !FUNCIONES
     function handleFilterOrigin(e) {
         e.preventDefault();
         dispatch(filterByOrigin(e.target.value));
@@ -104,29 +89,14 @@ const Home = () => {
       useEffect(() => {
         dispatch(getAllPokemons());
         dispatch(getAllTipos())
-        console.log(currentPokemons)
       }, [dispatch]);
 
 
-      //RENDERIZADO DEL COMPONENTE
 
-        if(!allPokemons.length || !totalTypes.length){
-            return (
-              <div>
-                <Loading/>
-              </div>
-            )
-          } else if(allPokemons.length !== 0 || totalTypes.length !== 0){
-            return (
-               <div className={a.home}>
-        
-                <Nav></Nav>
-
-                {/* <Filters currentPokemons={currentPokemons}></Filters> */}
-               
-               <div className={a.asidecontainer}>
+    return ( 
+        <div className={a.asidecontainer}>
                      <div className= {a.ordenado}>
-                  <label className={a.tituloF}>Ordenar por:
+                  <label className={a.tituloF}>Ordenar por: </label>
                   <select
                     className={a.select}
                     defaultValue="name"
@@ -142,7 +112,7 @@ const Home = () => {
                       Z - A
                     </option>
                   </select>
-     
+        
                   <select
                     className={a.select}
                     defaultValue="Ataque"
@@ -157,12 +127,11 @@ const Home = () => {
                     <option className={a.options} value="maxToMin" key={a.options}>
                       Max a Min
                     </option>
-                  </select>    
-                  </label>
+                  </select>
                 </div>
         
                 <div className={a.filtrado}>
-                  <label className={a.tituloF}>Filtrar por: 
+                  <label className={a.tituloF}>Filtrar por: </label>
                   <select
                     className={a.select}
                     defaultValue="Todos"
@@ -204,25 +173,8 @@ const Home = () => {
                           </option>
                         ))}
                   </select>
-                  </label>
                 </div>
-                </div>
-        
-   
-        
-                <section className={a.maincards}>
-                {currentPokemons?.map((p) => {
-                 return (
-                    <section className={a.cardpokemons} key={p.ID}>
-                        <Link className={a.link} key={p.ID} to={"/pokemonsdetail/" + p.ID} style={{ textDecoration: "inherit" }}>
-                          <Pokemon Imagen={p.Imagen} Nombre={p.Nombre} Tipos={p.Tipos} ID={p.ID}/>   
-                        </Link>
-                    </section>            
-                       );
-                    })}
-              </section>   
-              
-     <div className={a.divPaginado}>
+                <div className={a.divPaginado}>
           <div className={a.divpaginado1}>
                   <button onClick={begin} className={a.btnpaginado}>
                     {"<"}
@@ -245,15 +197,8 @@ const Home = () => {
               />
         
           </div>
-               </div>  
-            ) 
-        //   } else if(!allPokemons.length || !totalTypes.length){
-        //     return (
-        //         <div>
-        //            <ErrorPage></ErrorPage>
-        //         </div>
-        //     );
-        // } 
-  }}
+                </div>
+    )
+}
 
-export default Home
+export default Filters
