@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import axios from 'axios';
-// console.log('REACT API', import.meta.env.REACT_APP_API_URL)
 axios.defaults.baseURL = import.meta.env.VITE_REACT_APP_API_URL
 
 ReactDOM.createRoot(document.getElementById("root")).render(
