@@ -5,10 +5,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import axios from 'axios';
-import dotenv from "dotenv";
-dotenv.config();
-
-axios.defaults.baseURL = import.meta.env.VITE.REACT_APP_API || 'http://localhost:3001';
+axios.defaults.baseURL = import.meta.env.VITE_REACT_APP_API_URL
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
