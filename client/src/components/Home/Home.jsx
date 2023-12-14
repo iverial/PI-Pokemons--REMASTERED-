@@ -104,7 +104,6 @@ const Home = () => {
       useEffect(() => {
         dispatch(getAllPokemons());
         dispatch(getAllTipos())
-        console.log(currentPokemons)
       }, [dispatch]);
 
 
