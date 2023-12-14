@@ -78,11 +78,11 @@
     padding: 15px 30px;
     cursor: pointer;
     letter-spacing: 2px;
-    background-color: var(--color-primary);
+    background-color: black;
     color: #fff;
 }
 
 .btnsearch:hover{
-    background-color: var(--color-primary-hover);
-    color: #000;
+    background-color: #EF4138;
+    color: #fff;
 }

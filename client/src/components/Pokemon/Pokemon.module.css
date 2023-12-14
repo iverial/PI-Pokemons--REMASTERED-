@@ -8,11 +8,16 @@
 .container:hover{
     transform: scale(1.1);
     /* border: 10px solid #f2f2f2;; */
-    /* background-color: #f2f2f2; */
+    /* background-color: rgb(0, 0, 0); */
 }
+/* 
+.img:hover{
+    background-color: rgba(0, 0, 0, 0.465);
+} */
+
 
  .img {
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
     /* display: flex;
     align-items: center;
     justify-content: center; */
@@ -26,11 +31,12 @@
     /* padding: 15px; */
     display: flex;
     align-items: center;
-
+    justify-content: center;
+    color: black;
 }
 
 .cardinfo h2 {
-   color: #333;
+   color: rgb(0, 0, 0);
 }
 
 .Tipos{
@@ -38,13 +44,17 @@
     gap: 10px;
     margin-top: 10px;
     align-content: center; */
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(19, 17, 17);
 }
 
 .Nombre{
     display: flex;
     justify-content: center;
     align-content: center;
+    color: black;
 }
 
 .Tipos span{

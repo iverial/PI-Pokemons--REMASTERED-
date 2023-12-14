@@ -1,23 +1,28 @@
 .Paginado{
-    display: flex;
-    position: relative;
+    display: flex;  
+    align-items: center;
     justify-content: center;
-    min-width: 20px;
-    max-height: 200px;
+    padding-bottom: 20px;
     
 }
 
 .number{
-    min-width: 20px;
+    min-width: 10px;
     list-style-type: none;
 }
 
 .numeros{
     background-color: black;
     margin: 5px;
-    color: blanchedalmond;
+    color: #fff;
     width: 70px;
     height: 50px;
     border-radius: 10px;
     font-size: 30px;
+    
+}
+
+.numeros:hover {
+    background-color: #EF4138;
+    color: #fff;
 }
