@@ -1,4 +1,11 @@
 .container{
-    margin-top: 150px;
-    margin-left: -50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 70px;
+    flex-direction: column;
+}
+
+.cargando{
+   
 }

@@ -222,7 +222,7 @@ const Home = () => {
               </section>   
               
      <div className={a.divPaginado}>
-          <div className={a.divpaginado1}>
+      <div className={a.divpaginado1}>
                   <button onClick={begin} className={a.btnpaginado}>
                     {"<"}
                   </button>
@@ -236,13 +236,15 @@ const Home = () => {
                     {">"}
                </button>
                 </div>
+                
                <Paginado PokemonsPerPage={PokemonsPerPage}
                allPokemons={allPokemons.length} 
                paginado={paginado}
                className={a.paginado}
                key={paginado}
               />
-        
+
+            
           </div>
                </div>  
             ) 

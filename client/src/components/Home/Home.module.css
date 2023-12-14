@@ -39,24 +39,19 @@
 }
 
 .divPaginado{
-  max-width: 400px;
-  margin-top: 6%;
-  margin-left: 37%; 
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
   
 .asidecontainer{
- flex-direction: column;
+ flex-direction: row;
  justify-content: center;
  display: flex; 
    gap: 10px;
 }
 
-.select{
-  background-color: #fff;
-  color: black;
-  font-size: medium;
-  border-radius: 7px;
-}
+
 
 .label{
   font-size: 20px;
@@ -79,14 +74,39 @@
   color: white;
   background-color: #000000;
   padding: 2px 16px 8px;
-  border: 4.4px solid black;
-  border-radius: 32px;
+  border: 1.1px solid black;
+  border-radius: 10px;
   text-decoration: none;
-  text-align: right;     
-  margin-left: 15px;
+}
+
+.btnpaginado:hover{
+  background-color: #EF4138;
+  color: #fff;
+}
+
+.divPaginado{
+  display: flex;
+  flex-direction: column;
 }
 
 .divpaginado1{
-  margin-left: 30px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+}
 
+.select{
+  background-color: black;
+  color: #fff;
+  font-size: medium;
+  border-radius: 7px;
+  border-radius: 10px;
+}
+
+.options{
+  /* background-color: #EF4138;
+  color: #fff; */
+  border-radius: 20px;
 }
