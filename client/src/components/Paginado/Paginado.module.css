@@ -9,6 +9,7 @@
 .number{
     min-width: 10px;
     list-style-type: none;
+    cursor: pointer;
 }
 
 .numeros{
@@ -19,7 +20,7 @@
     height: 50px;
     border-radius: 10px;
     font-size: 30px;
-    
+    cursor: pointer;
 }
 
 .numeros:hover {
