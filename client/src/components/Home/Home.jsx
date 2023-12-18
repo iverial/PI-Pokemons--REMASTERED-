@@ -102,8 +102,8 @@ const Home = () => {
       }
 
       useEffect(() => {
+        dispatch(getAllTipos());
         dispatch(getAllPokemons());
-        dispatch(getAllTipos())
       }, [dispatch]);
 
 
