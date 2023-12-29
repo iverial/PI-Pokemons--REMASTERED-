@@ -77,6 +77,7 @@
   border: 1.1px solid black;
   border-radius: 10px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btnpaginado:hover{
@@ -103,10 +104,12 @@
   font-size: medium;
   border-radius: 7px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .options{
   /* background-color: #EF4138;
   color: #fff; */
   border-radius: 20px;
+  cursor: pointer;
 }
