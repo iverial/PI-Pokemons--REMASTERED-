@@ -2,37 +2,21 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const { DB_USER, DB_PASSWORD, DB_HOST,DB_NAME, PORT} = process.env;
-let sequelize =
-  process.env.NODE_ENV === "production"
-    ? new Sequelize({
-        database: DB_NAME,
-        dialect: "postgres",
-        host: DB_HOST,
-        port: PORT,
-        username: DB_USER,
-        password: DB_PASSWORD,
-        pool: {
-          max: 3,
-          min: 1,
-          idle: 10000,
-        },
-        dialectOptions: {
-          ssl: {
-            require: true,
-            // Ref.: https://github.com/brianc/node-postgres/issues/2009
-            rejectUnauthorized: false,
-          },
-          keepAlive: true,
-        },
-        ssl: true,
-      })
-    : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-        { logging: false, native: false }
-      );
-const basename = path.basename(__filename);
 
+const {
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME,
+} = process.env; 
+
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+  logging: false, // set to console.log to see the raw SQL queries
+  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+});
+
+sequelize.authenticate()
+.then( () => console.log('Connection has been established successfully.'))
+.catch(err => {console.error('Unable to connect to the database:'); });
+
+const basename = path.basename(__filename);
 const modelDefiners = [];
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
@@ -51,14 +35,12 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Pokemon, Tipo} = sequelize.models;
+const { Pokemons, Types } = sequelize.models;
 
-// Aca vendrian las relaciones
-// Product.hasMany(Reviews);
-Pokemon.belongsToMany(Tipo, {through: "Pokemontipo"})
-Tipo.belongsToMany(Pokemon, {through: "Pokemontipo"})
+Pokemons.belongsToMany(Types, { through: 'Pokemons_Types' });
+Types.belongsToMany(Pokemons, { through: 'Pokemons_Types' });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
-  conn: sequelize,     // para importart la conexión { conn } = require('./db.js'); sa
+  conn: sequelize,     // para importar la conexión { conn } = require('./db.js');
 };

@@ -1,12 +1,9 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import store from "./redux/store.js";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import axios from 'axios';
-
-axios.defaults.baseURL = import.meta.env.VITE_REACT_APP_API_URL
+import App from "./App.jsx";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from './store';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
